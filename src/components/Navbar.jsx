@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/macro';
 import { Link } from 'react-router-dom';
+
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
 import Bars from '../images/menu.svg';
@@ -93,11 +94,11 @@ const NavBtn = styled.div`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <Nav>
       <Logo to="/">REACT LAND</Logo>
-      <MenuBars />
+      <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map(({ title, link }) => (
           <NavMenuLink key={title} to={link}>
